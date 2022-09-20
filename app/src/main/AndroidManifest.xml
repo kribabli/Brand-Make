@@ -25,6 +25,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AllCollageView"
+            android:exported="false" />
+        <activity
             android:name=".Activities.MainLoginPage"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

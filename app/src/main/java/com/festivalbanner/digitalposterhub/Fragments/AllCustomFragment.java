@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -17,6 +18,7 @@ import android.widget.LinearLayout;
 import com.facebook.ads.AdSettings;
 import com.festivalbanner.digitalposterhub.Activities.ActivityHome;
 import com.festivalbanner.digitalposterhub.Activities.ActivityPreview;
+import com.festivalbanner.digitalposterhub.Activities.AllCollageView;
 import com.festivalbanner.digitalposterhub.R;
 import com.festivalbanner.digitalposterhub.StickerClasses.StickerView;
 import com.festivalbanner.digitalposterhub.Utills.Constance;
@@ -26,12 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AllCustomFragment extends Fragment {
-    CollageView collage;
-    View view;
+
+
     StickerView sticker_view;
     Context context;
-    Bitmap bitmapsave;
-    LinearLayout ll_content, ll_main_custom;
+
+    View view;
+    LinearLayout create_your_own;
+    LinearLayout make_your_video;
+    LinearLayout image_to_video,Video_template,collage_Maker;
+    LinearLayoutCompat Digital_business_Card,logo_maker;
+
 
     public AllCustomFragment() {
         // Required empty public constructor
@@ -42,39 +49,28 @@ public class AllCustomFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_all_custom, container, false);
-
-        collage = view.findViewById(R.id.collage);
+        create_your_own=view.findViewById(R.id.create_your_own);
+        make_your_video=view.findViewById(R.id.make_your_video);
+        image_to_video=view.findViewById(R.id.image_to_video);
+        Video_template=view.findViewById(R.id.Video_template);
+        image_to_video=view.findViewById(R.id.image_to_video);
+        collage_Maker=view.findViewById(R.id.collage_Maker);
+        Digital_business_Card=view.findViewById(R.id.Digital_business_Card);
+        logo_maker=view.findViewById(R.id.logo_maker);
 
         ActivityHome.getInstance().ivBack.setVisibility(View.GONE);
         ActivityHome.getInstance().ll_next.setVisibility(View.VISIBLE);
         ActivityHome.getInstance().ll_next.setVisibility(View.VISIBLE);
 
-        ActivityHome.getInstance().ll_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sticker_view.hideIcons(true);
-                bitmapsave = viewToBitmap(ll_content);
-                Constance.createdBitmap = bitmapsave;
 
-                Intent save = new Intent(context, ActivityPreview.class);
-                save.putExtra("name", "image");
-                startActivity(save);
-                if (!Constance.isPremium) {
-                    if (Constance.adType.equals("Ad Mob")) {
-//                        interstitialAdMobAd();
-                        Log.d("ADssss", "Ad Mob");
-                    } else {
-                        interstitialFacbookAd();
-                        Log.d("ADssss", "Facebook");
-                    }
-                }
+        collage_Maker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(), AllCollageView.class);
+                getContext().startActivity(intent);
+
             }
         });
-        List<Integer> listRes = new ArrayList<Integer>();
-        listRes.add(R.drawable.ic_logo);
-        listRes.add(R.drawable.premium_image);
-        collage.createCollageResources(listRes);
-        collage.setFixedCollage(false);
 
         return view;
     }
@@ -91,10 +87,5 @@ public class AllCustomFragment extends Fragment {
         }
     }
 
-    public Bitmap viewToBitmap(View view) {
-        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        view.draw(canvas);
-        return bitmap;
-    }
+
 }
