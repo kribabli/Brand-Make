@@ -26,7 +26,7 @@ public class AllCustomFragment extends Fragment {
     LinearLayout create_your_own;
     LinearLayout make_your_video;
     LinearLayout image_to_video, Video_template, collage_Maker;
-    LinearLayoutCompat Digital_business_Card, logo_maker;
+    LinearLayout Digital_business_Card, logo_maker;
 
 
     public AllCustomFragment() {
