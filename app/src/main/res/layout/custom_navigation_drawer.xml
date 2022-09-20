@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00000000">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@drawable/brandmake"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7dp"
+                android:text="@string/app_name"
+                android:textSize="16dp"
+                android:visibility="gone"
+                android:textColor="@color/colorTheame"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <!--  </LinearLayout>-->
+
+
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!--   </RelativeLayout>-->
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_nav_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClickHomeActivity">
+
+                        <ImageView
+                            android:id="@+id/iv_navhome"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_navhome"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_nav_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/iv_navhome"
+                            android:text="Home"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_nav_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:background="@drawable/nav_item_pressed"
+                    android:onClick="onClickHomeActivity">
+
+                    <ImageView
+                        android:id="@+id/iv_navvideo"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_navvideo"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/iv_navvideo"
+                        android:text="Video"
+                        android:textColor="@color/colorTheame"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        />
+                </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/rl_addbusiness"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClickHomeActivity">
+
+                        <ImageView
+                            android:id="@+id/iv_nav_mybusiness"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_addbusiness" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+
+                            android:layout_toRightOf="@+id/iv_nav_mybusiness"
+                            android:text="Add Business"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+            <!--    <RelativeLayout
+                        android:id="@+id/rl_editbusiness"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClickHomeActivity">
+
+                        <ImageView
+                            android:id="@+id/iv_nav_editbusiness"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_addbusiness"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+
+                            android:layout_toRightOf="@+id/iv_nav_editbusiness"
+                            android:text="Edit Business"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>-->
+                <RelativeLayout
+                    android:id="@+id/rl_nav_myprofile"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/nav_item_pressed"
+                    android:onClick="onClickHomeActivity">
+
+                    <ImageView
+                        android:id="@+id/iv_nav_Profile"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_profile" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/iv_nav_Profile"
+                        android:text="My Profile"
+                        android:textColor="@color/colorTheame"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+                   <!-- <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClick">
+
+                        <ImageView
+                            android:id="@+id/iv_my_business"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_bussiness"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/iv_my_business"
+                            android:text="My Business"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>-->
+               <!--     <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClick">
+
+                        <ImageView
+                            android:id="@+id/iv_my_categories"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_category"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/iv_my_categories"
+                            android:text="Categories"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>-->
+                    <RelativeLayout
+                        android:id="@+id/rl_nav_mygallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClickHomeActivity">
+
+                        <ImageView
+                            android:id="@+id/iv_my_gallery"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_mypost" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/iv_my_gallery"
+                            android:text="My Post"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/colorTheame" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_nav_privacypolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClickHomeActivity">
+
+                        <ImageView
+                            android:id="@+id/iv_nav_privacypolicy"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_privacypolicy" />
+
+                        <TextView
+                            android:id="@+id/tv_nav_privacypolicy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+
+                            android:layout_toRightOf="@+id/iv_nav_privacypolicy"
+                            android:text="Privacy Policy"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_nav_aboutus"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/nav_item_pressed"
+                        android:onClick="onClickHomeActivity">
+
+                        <ImageView
+                            android:id="@+id/iv_navaboutus"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15dp"
+                            android:src="@drawable/ic_aboutus" />
+
+                        <TextView
+                            android:id="@+id/tv_nav_aboutus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="15dp"
+
+                            android:layout_marginBottom="15dp"
+                            android:layout_toRightOf="@+id/iv_navaboutus"
+                            android:text="About Us"
+                            android:textColor="@color/colorTheame"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            />
+                    </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_nav_contactUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/nav_item_pressed"
+                    android:onClick="onClickHomeActivity">
+
+                    <ImageView
+                        android:id="@+id/iv_navcontactus"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/nav_contactus" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toRightOf="@+id/iv_navcontactus"
+                        android:text="Contact Us"
+                        android:textColor="@color/colorTheame"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_nav_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/nav_item_pressed"
+                    android:onClick="onClickHomeActivity">
+
+                    <ImageView
+                        android:id="@+id/iv_navfeedback"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/feedback_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toRightOf="@+id/iv_navfeedback"
+                        android:text="Feedback"
+                        android:id="@+id/tv_nav_feedback"
+                        android:textColor="@color/colorTheame"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        />
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_nav_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/nav_item_pressed"
+                    android:onClick="onClickHomeActivity">
+
+                    <ImageView
+                        android:id="@+id/iv_navlogout"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_logout" />
+
+                    <TextView
+                        android:id="@+id/tv_nav_logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_toRightOf="@+id/iv_navlogout"
+                        android:text="Logout"
+                        android:textColor="@color/colorTheame"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/tv_buy_pre"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:background="@drawable/bg_grdiant_cornr"
+                    android:gravity="center"
+                    android:text="BUY PREMIUM"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorWhite"
+                    android:shadowColor="@color/color24"
+                    android:outlineAmbientShadowColor="@color/color24"
+                    android:textSize="@dimen/_17sdp"/>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_5sdp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/footer_background">
+       <LinearLayout
+           android:id="@+id/ll_shareapp"
+           android:onClick="onClickHomeActivity"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           android:gravity="center">
+           <ImageView
+               android:layout_width="24dp"
+               android:layout_height="24dp"
+               android:src="@drawable/ic_shareus"
+               android:tint="@color/colorWhite"/>
+       </LinearLayout>
+
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:src="@color/colorWhite"/>
+        <LinearLayout
+        android:id="@+id/ll_rateapp"
+        android:onClick="onClickHomeActivity"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           android:gravity="center">
+           <ImageView
+               android:layout_width="24dp"
+               android:layout_height="24dp"
+               android:src="@drawable/ic_rateus"
+               android:tint="@color/colorWhite">
+           </ImageView>
+       </LinearLayout>
+        <ImageView
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:src="@color/colorWhite"/>
+        <LinearLayout
+        android:id="@+id/ll_moreapp"
+        android:onClick="onClickHomeActivity"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           android:gravity="center">
+           <ImageView
+               android:layout_width="24dp"
+               android:layout_height="24dp"
+               android:tint="@color/colorWhite"
+               android:src="@drawable/ic_moreapp"/>
+       </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

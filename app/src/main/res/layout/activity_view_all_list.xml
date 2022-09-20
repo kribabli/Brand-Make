@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorTheame_background"
+    tools:context="com.festivalbanner.digitalposterhub.Activities.ActivityViewAllList">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_backarrow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:tint="@color/colorTheame_text"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/back_arrow" />
+
+            <TextView
+                android:id="@+id/tv_viewalltittlename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:text="Parent category name"
+                android:textColor="@color/colorTheame_text"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_al_language"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:src="@drawable/language_icon"
+                android:visibility="gone"/>
+            <!--  <LinearLayout
+                  android:id="@+id/ll_next_singlecatlist"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="5dp"
+                  android:paddingTop="8dp"
+                  android:paddingLeft="8dp"
+                  android:paddingBottom="5dp"
+                  android:background="@drawable/round_view_whiteborder"
+                  android:orientation="horizontal"
+                  android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+                  android:gravity="center">
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="NEXT"
+                      android:textColor="@color/colorWhite"
+                      android:textSize="12dp"
+
+                      >
+                  </TextView>
+                  <ImageView
+                      android:id="@+id/iv_nextarrow"
+                      android:layout_width="25dp"
+                      android:layout_height="25dp"
+                      android:src="@drawable/ic_rightarrow"
+                      >
+                  </ImageView>
+              </LinearLayout>-->
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_select_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="#e5e5e5"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_as_festival"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:background="@drawable/roundcorner_button">
+
+
+            <TextView
+                android:id="@+id/tv_as_festival"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="Festival"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18sdp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_as_category"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:id="@+id/tv_as_category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="Category"
+                android:textColor="@color/colorTheame"
+                android:textSize="@dimen/_18sdp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_viewalllist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cat_alv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/facbook_ad_banner"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            </LinearLayout>
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_home_footer" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

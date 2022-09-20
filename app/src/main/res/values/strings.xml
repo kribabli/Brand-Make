@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Brand Make</string>
+
+    <string name="interstitial_full_screen">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_home_footer">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="facebook_banner_id">590352208175905_590352491509210</string>
+    <string name="facebook_interstitial_Ad">590352208175905_590353074842485</string>
+    <string name="app_Id">1:917284955330:android:e35d6cdaad65e4f2d2475b</string>
+
+    <string name="file_provider_authority" translatable="false">com.festivalbanner.provider</string>
+
+
+    <string name="create_custom">Custom Frame</string>
+    <string name="Tap_Chosse">Select logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

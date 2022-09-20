@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.festivalbanner.digitalposterhub.Activities.PremiumPreview">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/back_arrow"
+            android:tint="@color/colorTheame" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/premium_image"
+                android:layout_marginBottom="@dimen/_80sdp"/>
+
+
+            <LinearLayout
+                android:id="@+id/ll_whatsapp_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/roundcorner_button"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/finish_businness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Whats App"
+                    android:textColor="@color/colorTheame"
+                    android:textSize="16dp"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

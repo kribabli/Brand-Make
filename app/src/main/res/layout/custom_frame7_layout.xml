@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_logolayout7"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/tv_f7_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_1sdp"
+            android:text="Name"
+
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11sdp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@color/colorWhite"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <!--  <LinearLayout
+                  android:id="@+id/ll_f7_email"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+                  <ImageView
+                      android:id="@+id/iv_emaillayout7"
+                      android:layout_width="15dp"
+                      android:layout_height="15dp"
+                      android:layout_marginRight="4dp"
+                      android:src="@drawable/f2_email"></ImageView>
+
+                  <TextView
+                      android:id="@+id/tv_emaillayout7"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:paddingRight="@dimen/_3sdp"
+                      android:text="company@demo.com"
+                      android:textColor="@color/colorBlack"
+                      android:textSize="10dp" />
+              </LinearLayout>-->
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:src="@color/colorBlack">
+
+            </ImageView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/ll_all_social"
+                    android:gravity="left"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/ll_f7_call"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_calllayout7"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@drawable/f2_call">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/tv_calllayout7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+91 9876543210"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+                    <!-- <LinearLayout
+                        android:id="@+id/ll_f7_web"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_weblayout7"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@drawable/f2_web">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/tv_websitelayout7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="www.companywebsite.com"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="10dp" />
+                    </LinearLayout>-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_f7_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_locationlayout7"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginRight="4dp"
+                            android:src="@drawable/f2_loct">
+
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/tv_locationlayout7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="@dimen/_3sdp"
+                            android:text="company address"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_all_social"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/f_facebook" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/f_insta" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/f_twitter" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <!--  <ImageView
+              android:layout_width="60dp"
+              android:layout_height="60dp"
+              android:src="@drawable/f_logo"
+              android:scaleType="fitXY"
+              android:layout_alignParentLeft="true"
+              android:layout_marginTop="10dp"
+              android:layout_marginLeft="10dp">
+          </ImageView>
+          <LinearLayout
+              android:layout_width="140dp"
+              android:layout_height="40dp"
+              android:layout_alignParentRight="true"
+              android:gravity="center"
+              android:background="@drawable/f10_bgimage1"
+              android:orientation="horizontal">
+
+              <ImageView
+                  android:layout_width="20dp"
+                  android:layout_height="20dp"
+                  android:layout_marginLeft="4dp"
+                  android:src="@drawable/f_call"
+                  android:layout_marginRight="4dp">
+              </ImageView>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="+91 987654321"
+                  android:textColor="@color/colorBlack"
+                  android:textSize="12dp"></TextView>
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentBottom="true"
+
+              android:layout_marginRight="2dp"
+              android:layout_marginLeft="2dp"
+              android:gravity="center"
+              android:orientation="vertical">
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="40dp"
+
+                  android:background="@drawable/f10_bgimage2">
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentLeft="true">
+                      <ImageView
+                          android:layout_width="18dp"
+                          android:layout_height="18dp"
+                          android:src="@drawable/f_web"
+                          android:layout_marginLeft="5dp"
+                          android:layout_marginRight="4dp"></ImageView>
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="www.companywebsite.com"
+                          android:textColor="@color/colorBlack"
+                          android:textSize="12dp"
+                          ></TextView>
+                  </LinearLayout>
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_centerVertical="true"
+                      android:layout_alignParentRight="true">
+
+                      <LinearLayout
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal">
+
+                          <ImageView
+                              android:layout_width="20dp"
+                              android:layout_height="20dp"
+                              android:src="@drawable/f_email"
+                              android:layout_marginRight="4dp">
+                          </ImageView>
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="companyemail@gmail.com"
+                              android:textSize="12dp"
+                              android:layout_marginRight="4dp"
+                              android:textColor="@color/colorBlack"
+                              ></TextView>
+                      </LinearLayout>
+                  </LinearLayout>
+
+              </RelativeLayout>
+             &lt;!&ndash; <ImageView
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:layout_marginLeft="5dp"
+                  android:layout_marginRight="5dp"
+                  android:layout_marginTop="3dp"
+                  android:layout_marginBottom="3dp"
+                  android:src="@color/colorBlack">
+
+              </ImageView>&ndash;&gt;
+
+
+            &lt;!&ndash;  <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+                  <ImageView
+                      android:layout_width="20dp"
+                      android:layout_height="20dp"
+                      android:src="@drawable/f_location"
+                      android:layout_marginRight="4dp">
+                  </ImageView>
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Company Address"
+                      android:textColor="@color/colorBlack"
+                      android:textSize="12dp"></TextView>
+              </LinearLayout>&ndash;&gt;
+
+
+
+          </LinearLayout>-->
+
+
+    </RelativeLayout>
+</RelativeLayout>

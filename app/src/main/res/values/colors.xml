@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="colorBlack">#FF000000</color>
+    <color name="colorLightBlack">#A9000000</color>
+   <!-- <color name="colorWhite">#FF000000</color>-->
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorLightWhite">#96FFFFFF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="background">#f8faf9</color>
+<!--    <color name="colorTheame">#2311a7</color>-->
+<!--    <color name="colorTheame_dark">#00016a</color>-->
+
+    <color name="colorTheame">#018AEF</color>
+    <color name="colorTheame_dark">#02487C</color>
+    <color name="colorTheame_background">#EAEAEA</color>
+    <color name="colorTheame_gray2">#aeb0b2</color>
+    <color name="colorTheame_gray3">#eaeced</color>
+    <color name="colorTheame_text">#545355</color>
+
+    <color name="colorDailogBg">#A9000000</color>
+    <color name="colorLightGray">#F1EEEE</color>
+    <color name="colorLightGrey">#ABA19398</color>
+    <color name="colorLightGrey2">#8AA19398</color>
+    <color name="colorLightGrey3">#3CA19398</color>
+    <color name="hint">#cc0000</color>
+    <color name="colorCustomText">#0000FF</color>
+    <color name="colorPremium">#ed2b43</color>
+
+    <color name="color1">#99004C</color>
+    <color name="color2">#4C0099</color>
+    <color name="color3">#0000FF</color>
+    <color name="color4">#00FFFF</color>
+    <color name="color5">#00FF80</color>
+    <color name="color6">#FFFF00</color>
+    <color name="color7">#FF8000</color>
+    <color name="color8">#FF0000</color>
+    <color name="color9">#336600</color>
+    <color name="color10">#A0A0A0</color>
+    <color name="color11">#EFCC4F</color>
+    <color name="color12">#94EFCC4F</color>
+    <color name="color13">#FFFFE0</color>
+    <color name="color14">#008000</color>
+    <color name="color15">#808000</color>
+    <color name="color16">#6B8E23</color>
+    <color name="color17">#00BFFF</color>
+    <color name="color18">#1E90FF</color>
+    <color name="color19">#7B68EE</color>
+    <color name="color20">#FF00FF</color>
+    <color name="color21">#800080</color>
+    <color name="color22">#FF69B4</color>
+    <color name="color23">#FFE4E1</color>
+    <color name="color24">#778899</color>
+    <color name="color25">#BC8F8F</color>
+    <color name="color26">#CD853F</color>
+    <color name="color27">#A0522D</color>
+    <color name="back_color">#f7931e</color>
+    <color name="frm_9_1">#D5C67A</color>
+    <color name="frm_9_2">#21295C</color>
+    <color name="frm_9_bg1">#B68F40</color>
+    <color name="frm_9_bg2">#001B2E</color>
+    <color name="frm_9_font">#F4ECD6</color>
+    <color name="frm_10_bg1">#417B5A</color>
+    <color name="frm_10_bg2">#102542</color>
+    <color name="frm_10_1">#CDD7D6</color>
+    <color name="frm_10_2">#5e0b15</color>
+    <color name="frm_11_bg1">#BF1A2F</color>
+    <color name="frm_11_bg2">#283845</color>
+    <color name="frm_11_bg2_dark">#202C39</color>
+    <color name="frm_11_icon">#21295C</color>
+    <color name="frm_11_icon_bk">#F2D492</color>
+    <color name="frm_12_bg1">#262626</color>
+    <color name="frm_12_bg2">#DA2C38</color>
+    <color name="frm_12_icon_bk">#FAF0CA</color>
+    <color name="frm_13_bg1">#042A2B</color>
+    <color name="frm_13_bg2">#FAAF40</color>
+
+</resources>

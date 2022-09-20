@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Activities.AfterBusinessSelection">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/include_toolbar" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/_50sdp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/image_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:foreground="?selectableItemBackground"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/img"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/image_place_holder" />
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/new_font"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:text="Business Details"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/new_font"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:text="We will make footer design according your details"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <RelativeLayout
+                    android:id="@+id/upload_image_reler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="#193A4D"
+                        android:fontFamily="@font/new_font"
+                        android:gravity="center"
+                        android:text="Upload Logo"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="25dp"
+                        android:src="@drawable/upload_image_fig" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/new_font"
+                    android:text="Business Name"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/name_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/white_card_view"
+                    android:backgroundTint="@color/whiite"
+                    android:drawableRight="@drawable/bag_fig"
+                    android:drawableTint="@color/black"
+                    android:elevation="3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/new_font"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Name here"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/new_font"
+                    android:text="Mobile Number One"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/number_one_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/white_card_view"
+                    android:backgroundTint="@color/whiite"
+                    android:drawableRight="@drawable/mobile_fig"
+                    android:drawableTint="@color/black"
+                    android:elevation="3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/new_font"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Number here"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/new_font"
+                    android:text="Mobile Number Two"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/number_two_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/white_card_view"
+                    android:backgroundTint="@color/whiite"
+                    android:drawableRight="@drawable/mobile_fig"
+                    android:drawableTint="@color/black"
+                    android:elevation="3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/new_font"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Number here"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/new_font"
+                    android:text="Email"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/email_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/white_card_view"
+                    android:backgroundTint="@color/whiite"
+                    android:drawableRight="@drawable/email_fig"
+                    android:drawableTint="@color/black"
+                    android:elevation="3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/new_font"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Email here"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/new_font"
+                    android:text="Website"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/website_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/white_card_view"
+                    android:backgroundTint="@color/whiite"
+                    android:drawableRight="@drawable/website_fig"
+                    android:drawableTint="@color/black"
+                    android:elevation="3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/new_font"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Website here"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/new_font"
+                    android:text="Address"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/address_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/white_card_view"
+                    android:backgroundTint="@color/whiite"
+                    android:drawableRight="@drawable/address_fig"
+                    android:drawableTint="@color/black"
+                    android:elevation="3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/new_font"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Address here"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/new_font"
+                    android:text="City"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/city_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/white_card_view"
+                    android:backgroundTint="@color/whiite"
+                    android:drawableRight="@drawable/city_fig"
+                    android:drawableTint="@color/black"
+                    android:elevation="3dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/new_font"
+                    android:gravity="center_vertical"
+                    android:hint="Enter City here"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+
+                <Button
+                    android:id="@+id/submit_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/buttonredcolorround"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:fontFamily="@font/new_font"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

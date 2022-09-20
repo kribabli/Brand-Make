@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_logolayout6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/tv_f6_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_logolayout6"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingTop="@dimen/_1sdp"
+            android:paddingRight="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_1sdp"
+            android:text="Name"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="@dimen/_11sdp" />
+
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_f6_bottom_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_f6_email"
+                    android:layout_width="160dp"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/f10_bgimage1"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="3dp">
+
+                        <ImageView
+                            android:id="@+id/iv_emaillayout6"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="3dp"
+                            android:src="@drawable/f_email" />
+
+                        <TextView
+                            android:id="@+id/tv_emaillayout6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dp"
+                            android:text="companyemail@gmail.com"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_f6_call"
+                    android:layout_width="90dp"
+                    android:layout_height="25dp"
+                    android:background="#d69627"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_calllayout6"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/f_call" />
+
+                    <TextView
+                        android:id="@+id/tv_mobilenumberlayout6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right|center"
+                        android:paddingRight="2dp"
+                        android:text="987654321"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="11dp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/f10_bgimage2">
+
+                <LinearLayout
+                    android:id="@+id/ll_f6_location"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.3"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_centerVertical="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_locationlayout6"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/f_loct"
+                            android:layout_marginRight="4dp"/>
+                        <TextView
+                            android:id="@+id/tv_locationlayout6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="company address"
+                            android:textSize="10dp"
+                            android:lines="2"
+                            android:layout_marginRight="4dp"
+                            android:textColor="@color/colorBlack"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_f6_web"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:background="@drawable/f10_bgimage1"
+                    android:gravity="right|center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_weblayout6"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/f_web"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="2dp"/>
+                    <TextView
+                        android:id="@+id/tv_websitelayout6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center"
+                        android:text="www.companywebsite.com"
+                        android:textColor="@color/colorBlack"
+                        android:paddingRight="2dp"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            <!-- <ImageView
+                 android:layout_width="match_parent"
+                 android:layout_height="2dp"
+                 android:layout_marginLeft="5dp"
+                 android:layout_marginRight="5dp"
+                 android:layout_marginTop="3dp"
+                 android:layout_marginBottom="3dp"
+                 android:src="@color/colorBlack">
+
+             </ImageView>-->
+            <!--  <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+                  <ImageView
+                      android:layout_width="20dp"
+                      android:layout_height="20dp"
+                      android:src="@drawable/f_location"
+                      android:layout_marginRight="4dp">
+                  </ImageView>
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Company Address"
+                      android:textColor="@color/colorBlack"
+                      android:textSize="15dp"></TextView>
+              </LinearLayout>-->
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,3 @@
+include ':popuphelper'
+include ':app'
+rootProject.name = "Digital Poster HUB"

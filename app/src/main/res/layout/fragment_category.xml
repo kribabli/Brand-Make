@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:weightSum="10"
+    android:orientation="vertical"
+    tools:context="com.festivalbanner.digitalposterhub.Activities.ActivityViewAllList">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.58"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="6dp"
+            android:textColor="@color/white"
+            android:paddingTop="8dp"
+            android:textSize="15sp"
+            android:gravity="start"
+            android:paddingLeft="10dp"
+            android:background="#707070"
+            android:text="Popular Categories"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_viewalllist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5.5"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="6dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.58"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="6dp"
+        android:textColor="@color/white"
+        android:paddingTop="8dp"
+        android:textSize="15sp"
+        android:gravity="start"
+        android:paddingLeft="10dp"
+        android:background="#707070"
+        android:text="Other Categories"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/otherCategories"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.2"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="6dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>

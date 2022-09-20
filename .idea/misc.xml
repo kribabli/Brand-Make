@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/drawable/baseline_chevron_left_24.xml" value="0.1" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/drawable/bg_bordr_with_solid.xml" value="0.1" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/drawable/bg_grdiant.xml" value="0.1" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/drawable/bg_grdiant_cornr.xml" value="0.1" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/drawable/black_border.xml" value="0.1" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/layout/activity_home.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/layout/fragment_all_custom.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/layout/fragment_create_custom_image.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Ravi/Desktop/Amit Office Projects/BrandMake/app/src/main/res/layout/fragment_home.xml" value="0.19895833333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

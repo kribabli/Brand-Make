@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.NewFestivalPost" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorTheame</item>
+        <item name="colorPrimaryVariant">@color/colorTheame_dark</item>
+        <item name="colorOnPrimary">@color/colorTheame_background</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/colorTheame_background</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/colorTheame_text</item>
+        <item name="android:textColorPrimary">@color/colorTheame_text</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorTheame</item>
+        <item name="colorPrimaryDark">@color/colorTheame</item>
+        <item name="colorAccent">@color/colorTheame</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorBlack</item>
+    </style>
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorTheame_gray2</item>
+        <item name="colorPrimaryDark">@color/colorTheame_dark</item>
+        <item name="colorAccent">@color/colorTheame</item>
+        <item name="android:positiveButtonText">@color/colorTheame_dark</item>
+        <item name="android:negativeButtonText">@color/colorTheame_dark</item>
+        <item name="android:textColorPrimary">@color/colorTheame_text</item>
+    </style>
+</resources>
