@@ -17,7 +17,7 @@ public class AllCollageView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_collage_view);
-        collageView=findViewById(R.id.collage);
+//        collageView=findViewById(R.id.collage);
 
         List<Integer> listRes = new ArrayList<Integer>();
         listRes.add(R.drawable.tr2);

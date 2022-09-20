@@ -2,14 +2,11 @@ package com.festivalbanner.digitalposterhub.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,27 +14,19 @@ import android.widget.LinearLayout;
 
 import com.facebook.ads.AdSettings;
 import com.festivalbanner.digitalposterhub.Activities.ActivityHome;
-import com.festivalbanner.digitalposterhub.Activities.ActivityPreview;
 import com.festivalbanner.digitalposterhub.Activities.AllCollageView;
+import com.festivalbanner.digitalposterhub.Me.LoGoMakerActivity;
 import com.festivalbanner.digitalposterhub.R;
 import com.festivalbanner.digitalposterhub.StickerClasses.StickerView;
-import com.festivalbanner.digitalposterhub.Utills.Constance;
-import com.jcmore2.collage.CollageView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AllCustomFragment extends Fragment {
-
-
     StickerView sticker_view;
     Context context;
-
     View view;
     LinearLayout create_your_own;
     LinearLayout make_your_video;
-    LinearLayout image_to_video,Video_template,collage_Maker;
-    LinearLayoutCompat Digital_business_Card,logo_maker;
+    LinearLayout image_to_video, Video_template, collage_Maker;
+    LinearLayoutCompat Digital_business_Card, logo_maker;
 
 
     public AllCustomFragment() {
@@ -49,14 +38,14 @@ public class AllCustomFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_all_custom, container, false);
-        create_your_own=view.findViewById(R.id.create_your_own);
-        make_your_video=view.findViewById(R.id.make_your_video);
-        image_to_video=view.findViewById(R.id.image_to_video);
-        Video_template=view.findViewById(R.id.Video_template);
-        image_to_video=view.findViewById(R.id.image_to_video);
-        collage_Maker=view.findViewById(R.id.collage_Maker);
-        Digital_business_Card=view.findViewById(R.id.Digital_business_Card);
-        logo_maker=view.findViewById(R.id.logo_maker);
+        create_your_own = view.findViewById(R.id.create_your_own);
+        make_your_video = view.findViewById(R.id.make_your_video);
+        image_to_video = view.findViewById(R.id.image_to_video);
+        Video_template = view.findViewById(R.id.Video_template);
+        image_to_video = view.findViewById(R.id.image_to_video);
+        collage_Maker = view.findViewById(R.id.collage_Maker);
+        Digital_business_Card = view.findViewById(R.id.Digital_business_Card);
+        logo_maker = view.findViewById(R.id.logo_maker);
 
         ActivityHome.getInstance().ivBack.setVisibility(View.GONE);
         ActivityHome.getInstance().ll_next.setVisibility(View.VISIBLE);
@@ -66,9 +55,16 @@ public class AllCustomFragment extends Fragment {
         collage_Maker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getContext(), AllCollageView.class);
+                Intent intent = new Intent(getContext(), AllCollageView.class);
                 getContext().startActivity(intent);
+            }
+        });
 
+        logo_maker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), LoGoMakerActivity.class);
+                getContext().startActivity(intent);
             }
         });
 
@@ -86,6 +82,4 @@ public class AllCustomFragment extends Fragment {
 
         }
     }
-
-
 }
