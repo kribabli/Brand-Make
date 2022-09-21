@@ -1,7 +1,9 @@
 package com.festivalbanner.digitalposterhub.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +20,6 @@ import com.festivalbanner.digitalposterhub.R;
 import java.util.ArrayList;
 
 public class AdapterFontList extends RecyclerView.Adapter<AdapterFontList.ViewHolder> {
-
     Context context;
     ArrayList<ModelFontDetail> modelFontDetailArrayList;
     String checkname;
@@ -27,7 +28,6 @@ public class AdapterFontList extends RecyclerView.Adapter<AdapterFontList.ViewHo
         this.context = context;
         this.modelFontDetailArrayList = modelFontDetailArrayList;
         this.checkname = checkname;
-
     }
 
     @NonNull
@@ -38,11 +38,10 @@ public class AdapterFontList extends RecyclerView.Adapter<AdapterFontList.ViewHo
         View view = layoutInflater.inflate(R.layout.item_rv_fontlist, null);
         ViewHolder holder = new ViewHolder(view);
         return holder;
-
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
         String[] fontlist1 = modelFontDetailArrayList.get(position).getFontName().split("\\.");
         holder.tv_font.setText(fontlist1[0].replace("-", " "));
@@ -54,7 +53,6 @@ public class AdapterFontList extends RecyclerView.Adapter<AdapterFontList.ViewHo
             public void onClick(View view) {
                 if (checkname.equals("fontforstickertext")) {
                     CreateCustomImageFragment.getInstance().SetFontToText(modelFontDetailArrayList.get(position).getFontName());
-
                 }
                 if (checkname.equals("fontstyle")) {
                     CreateCustomImageFragment.getInstance().setFontStyle(modelFontDetailArrayList.get(position).getFontName());
@@ -62,12 +60,9 @@ public class AdapterFontList extends RecyclerView.Adapter<AdapterFontList.ViewHo
                 }
                 if (checkname.equals("greetingstyle")) {
                     ActivityCreatePost.getInstance().setFontStyle(modelFontDetailArrayList.get(position).getFontName());
-
                 }
-
             }
         });
-
     }
 
 
@@ -77,12 +72,10 @@ public class AdapterFontList extends RecyclerView.Adapter<AdapterFontList.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         TextView tv_font;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             tv_font = itemView.findViewById(R.id.textview_fondemot);
         }
     }

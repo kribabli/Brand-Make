@@ -60,8 +60,6 @@ import com.facebook.ads.AdSettings;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAdListener;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.analytics.HitBuilders;
@@ -76,7 +74,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ActivityHome extends AppCompatActivity {
-
     Context context;
     DrawerLayout drawerLayout;
     public ImageView ivBack;
@@ -87,14 +84,12 @@ public class ActivityHome extends AppCompatActivity {
     // private ColorResource colorResource;
     View popupview_down;
     String frameName[] = {"All", "English", "Hindi", "Gujarati"};
-
     public PopupWindowHelper popupWindowHelper;
     AdView mAdView;
     LinearLayout facbook_ad_banner, ll_bnav_home, ll_bnav_category, ll_bnav_custom,
             ll_bnav_video, ll_bnav_post, ll_bnav_profile;
     ImageView iv_nav_home, iv_nav_ctgry, iv_nav_cstm, iv_nav_video, iv_nav_mypost, iv_nav_profile;
     public com.facebook.ads.InterstitialAd interstitialFacbookAd;
-    public InterstitialAd mInterstitialAd;
     Timer timer;
     TimerTask hourlyTask;
     Button tv_buy_pre;
@@ -292,8 +287,8 @@ public class ActivityHome extends AppCompatActivity {
 
                     tv_titletoolbar.setText("Custom");
                     // Constance.fragmentName="custom";
-                    loadFragment(new CreateCustomImageFragment());
-//                    loadFragment(new AllCustomFragment());
+//                    loadFragment(new CreateCustomImageFragment());
+                    loadFragment(new AllCustomFragment());
 
                     tv_bnav_custom.setVisibility(View.VISIBLE);
                     tv_bnav_post.setVisibility(View.GONE);
@@ -1233,7 +1228,6 @@ public class ActivityHome extends AppCompatActivity {
             CreateCustomImageFragment.getInstance().onActivityResult(requestCode, resultCode, data);
         }
 
-
      /*   if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
@@ -1244,7 +1238,6 @@ public class ActivityHome extends AppCompatActivity {
                 Exception error = result.getError();
             }
         }*/
-
 
     }
 
@@ -1301,8 +1294,6 @@ public class ActivityHome extends AppCompatActivity {
             });
             dialog.show();
         }
-
     }
-
 
 }

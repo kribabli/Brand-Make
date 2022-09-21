@@ -46,6 +46,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.festivalbanner.digitalposterhub.Adapters.AdapterBackgroundImage;
 import com.festivalbanner.digitalposterhub.Adapters.AdapterFontList;
 import com.festivalbanner.digitalposterhub.Adapters.AdapterTextColourPicker;
@@ -99,6 +100,8 @@ public class CreateCustomImageFragment extends Fragment {
     public static CreateCustomImageFragment instance = null;
     PopupWindow mPopupWindow, mPopupWindowpw;
     String typStyle = "";
+    String image, title;
+    ImageView image_selected;
 
     public CreateCustomImageFragment() {
         instance = CreateCustomImageFragment.this;
@@ -119,6 +122,14 @@ public class CreateCustomImageFragment extends Fragment {
 
         context = getContext();
         bindView();
+
+        image = getArguments().getString("image");
+        title = getArguments().getString("title");
+        if (image!=null){
+            Glide.with(context)
+                    .load(image)
+                    .into(image_selected);
+        }
 
         sharedPrefrenceConfig = new SharedPrefrenceConfig(context);
         calculationForHeight();
@@ -380,6 +391,7 @@ public class CreateCustomImageFragment extends Fragment {
 
     public void bindView() {
         mAdView = view.findViewById(R.id.adview);
+        image_selected = view.findViewById(R.id.image_selected);
         facbook_ad_banner = view.findViewById(R.id.facbook_ad_banner);
         iv_customimage = view.findViewById(R.id.iv_customimage);
         et_usertext = view.findViewById(R.id.et_usertext);
@@ -669,18 +681,13 @@ public class CreateCustomImageFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("abxzxc", "createquote");
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            Log.d("abxzxc", "createquote--1");
-
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
                 iv_customimage.setImageURI(resultUri);
-                Log.d("abxzxc", "createquote--2" + resultUri);
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
-                Log.d("abxzxc", "createquote--3" + error.getMessage());
             }
         }
 

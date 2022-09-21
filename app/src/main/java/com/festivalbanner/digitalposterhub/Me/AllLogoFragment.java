@@ -6,13 +6,15 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -95,7 +97,7 @@ public class AllLogoFragment extends Fragment {
                         listItems.add(allLogoPOJO);
                     }
                     allLogoAdapter = new AllLogoAdapter(getContext(), listItems);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                    recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
                     recyclerView.setAdapter(allLogoAdapter);
                     allLogoAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
@@ -138,15 +140,17 @@ public class AllLogoFragment extends Fragment {
         public void onBindViewHolder(@NonNull AllLogoAdapter.MyViewHolder holder, int position) {
             AllLogoPOJO allLogoPOJO = list.get(position);
 
+            holder.title.setText("TEXTILE");
             Glide.with(context)
                     .load(allLogoPOJO.getImage())
                     .into(holder.imageView);
 
-            holder.imageView.setOnClickListener(new View.OnClickListener() {
+            holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, LoGoEditActivity.class);
                     intent.putExtra("image", allLogoPOJO.getImage());
+                    intent.putExtra("title", "TEXTILE");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }
@@ -160,10 +164,14 @@ public class AllLogoFragment extends Fragment {
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             ImageView imageView;
+            TextView title;
+            RelativeLayout relativeLayout;
 
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
                 imageView = itemView.findViewById(R.id.imageView);
+                relativeLayout = itemView.findViewById(R.id.layout);
+                title = itemView.findViewById(R.id.title);
             }
         }
     }
