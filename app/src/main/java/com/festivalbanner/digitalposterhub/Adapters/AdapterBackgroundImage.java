@@ -65,7 +65,6 @@ public class AdapterBackgroundImage extends RecyclerView.Adapter<AdapterBackgrou
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView iv_bg_img;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             iv_bg_img = itemView.findViewById(R.id.iv_bg_img);
