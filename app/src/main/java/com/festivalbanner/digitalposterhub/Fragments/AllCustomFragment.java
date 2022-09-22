@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,6 +14,7 @@ import android.widget.LinearLayout;
 import com.facebook.ads.AdSettings;
 import com.festivalbanner.digitalposterhub.Activities.ActivityHome;
 import com.festivalbanner.digitalposterhub.Activities.AllCollageView;
+import com.festivalbanner.digitalposterhub.Me.DigitalBusinessCardActivity;
 import com.festivalbanner.digitalposterhub.Me.LoGoMakerActivity;
 import com.festivalbanner.digitalposterhub.R;
 import com.festivalbanner.digitalposterhub.StickerClasses.StickerView;
@@ -27,7 +27,6 @@ public class AllCustomFragment extends Fragment {
     LinearLayout make_your_video;
     LinearLayout image_to_video, Video_template, collage_Maker;
     LinearLayout Digital_business_Card, logo_maker;
-
 
     public AllCustomFragment() {
         // Required empty public constructor
@@ -51,11 +50,18 @@ public class AllCustomFragment extends Fragment {
         ActivityHome.getInstance().ll_next.setVisibility(View.VISIBLE);
         ActivityHome.getInstance().ll_next.setVisibility(View.VISIBLE);
 
-
         collage_Maker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), AllCollageView.class);
+                getContext().startActivity(intent);
+            }
+        });
+
+        Digital_business_Card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), DigitalBusinessCardActivity.class);
                 getContext().startActivity(intent);
             }
         });

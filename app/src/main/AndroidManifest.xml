@@ -25,6 +25,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Me.ShowDigitalBusinessCard"
+            android:exported="false" />
+        <activity
+            android:name=".Me.DigitalBusinessCardActivity"
+            android:exported="false" />
+        <activity
             android:name=".Me.LoGoEditActivity"
             android:exported="false" />
         <activity
