@@ -44,6 +44,11 @@
                 android:drawableEnd="@drawable/ic_download_logo"
                 android:gravity="center" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>

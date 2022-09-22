@@ -101,7 +101,7 @@ public class CreateCustomImageFragment extends Fragment {
     PopupWindow mPopupWindow, mPopupWindowpw;
     String typStyle = "";
     String image, title;
-    ImageView image_selected;
+    ImageView selected_image;
 
     public CreateCustomImageFragment() {
         instance = CreateCustomImageFragment.this;
@@ -123,12 +123,13 @@ public class CreateCustomImageFragment extends Fragment {
         context = getContext();
         bindView();
 
+        //get image uri from previous activity----------------
         image = getArguments().getString("image");
         title = getArguments().getString("title");
-        if (image!=null){
+        if (image != null) {
             Glide.with(context)
                     .load(image)
-                    .into(image_selected);
+                    .into(selected_image);
         }
 
         sharedPrefrenceConfig = new SharedPrefrenceConfig(context);
@@ -149,64 +150,39 @@ public class CreateCustomImageFragment extends Fragment {
         ActivityHome.getInstance().ll_next.setVisibility(View.VISIBLE);
         modelFontDetailArrayList = new ArrayList<>();
 
-        ActivityHome.getInstance().ll_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sticker_view.hideIcons(true);
-                bitmapsave = viewToBitmap(ll_content);
-                Constance.createdBitmap = bitmapsave;
+        ActivityHome.getInstance().ll_next.setOnClickListener(v -> {
+            sticker_view.hideIcons(true);
+            bitmapsave = viewToBitmap(ll_content);
+            Constance.createdBitmap = bitmapsave;
 
-                Intent save = new Intent(context, ActivityPreview.class);
-                save.putExtra("name", "image");
-                startActivity(save);
+            Intent save = new Intent(context, ActivityPreview.class);
+            save.putExtra("name", "image");
+            startActivity(save);
 //        if (getuser.getPlan_type() == null || !getuser.getPlan_type().equals("Premium")) {
-                if (!Constance.isPremium) {
-                    if (Constance.adType.equals("Ad Mob")) {
-                        interstitialAdMobAd();
-                        Log.d("ADssss", "Ad Mob");
-                    } else {
-                        interstitialFacbookAd();
-                        Log.d("ADssss", "Facebook");
-                    }
+            if (!Constance.isPremium) {
+                if (Constance.adType.equals("Ad Mob")) {
+                    interstitialAdMobAd();
+                } else {
+                    interstitialFacbookAd();
                 }
             }
         });
 
-        rlBackgroundColor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDailogForBackgroundcolour();
-            }
+        rlBackgroundColor.setOnClickListener(v -> openDailogForBackgroundcolour());
+
+        rlOverlay.setOnClickListener(v -> openDailogForOverlayBg());
+
+        rl_addlogo.setOnClickListener(v -> {
+            Log.d("TAG", "getInstance 3: ");
+            openGallery();
         });
 
-        rlOverlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDailogForOverlayBg();
-            }
+        rl_fontcolor.setOnClickListener(v -> {
+            typStyle = "font";
+            textStickerColorPopUp("font");
         });
 
-        rl_addlogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGallery();
-            }
-        });
-
-        rl_fontcolor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                typStyle = "font";
-                textStickerColorPopUp("font");
-            }
-        });
-
-        rl_Fontstyle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openDailogForFontStyle();
-            }
-        });
+        rl_Fontstyle.setOnClickListener(v -> openDailogForFontStyle());
 
         rlTextSize.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -391,7 +367,7 @@ public class CreateCustomImageFragment extends Fragment {
 
     public void bindView() {
         mAdView = view.findViewById(R.id.adview);
-        image_selected = view.findViewById(R.id.image_selected);
+        selected_image = view.findViewById(R.id.selected_image);
         facbook_ad_banner = view.findViewById(R.id.facbook_ad_banner);
         iv_customimage = view.findViewById(R.id.iv_customimage);
         et_usertext = view.findViewById(R.id.et_usertext);
@@ -416,7 +392,6 @@ public class CreateCustomImageFragment extends Fragment {
     }
 
     public void onclickCustomFrame(View view1) {
-
         switch (view1.getId()) {
             case R.id.iv_backarrow:
                 //onBackPressed();
@@ -430,10 +405,8 @@ public class CreateCustomImageFragment extends Fragment {
                 startActivity(save);
                 if (Constance.adType.equals("Ad Mob")) {
                     interstitialAdMobAd();
-                    Log.d("ADssss", "Ad Mob");
                 } else {
                     interstitialFacbookAd();
-                    Log.d("ADssss", "Facebook");
                 }
                 break;
             case R.id.rlBackgroundColor:
@@ -465,7 +438,6 @@ public class CreateCustomImageFragment extends Fragment {
                 et_text_sticker.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/" + "Acme.ttf"));
                 et_text_sticker.setHint("your text for sticker");
 
-
                 break;
             case R.id.rl_fontcolor:
                 //openDailogForFontColor();
@@ -488,7 +460,6 @@ public class CreateCustomImageFragment extends Fragment {
             case R.id.rl_addimage:
                 PickImageFromMobileGallery();
                 break;
-
         }
     }
 
@@ -794,8 +765,6 @@ public class CreateCustomImageFragment extends Fragment {
         data.add(new ModelColorList(R.color.color8));
         data.add(new ModelColorList(R.color.color10));
         data.add(new ModelColorList(R.color.color11));
-
-
         return data;
     }
 
@@ -904,7 +873,6 @@ public class CreateCustomImageFragment extends Fragment {
         data.add(new ModelBackgroundImage(R.drawable.img_3));
         data.add(new ModelBackgroundImage(R.drawable.pager_1));
         data.add(new ModelBackgroundImage(R.drawable.pager_2));
-
         return data;
     }
 
@@ -918,7 +886,6 @@ public class CreateCustomImageFragment extends Fragment {
         data.add(new ModelFramesDetails(R.drawable.f10));
         data.add(new ModelFramesDetails(R.drawable.f3));
         data.add(new ModelFramesDetails(R.drawable.f5));
-
         return data;
     }
 
@@ -1229,21 +1196,19 @@ public class CreateCustomImageFragment extends Fragment {
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         mPopupWindow.setOutsideTouchable(false);
 
-
         final TextView dialogTitle = (TextView) customView.findViewById(R.id.cp_accent_title);
         final Button btnOk = (Button) customView.findViewById(R.id.btnOk);
         final Button btnCancel = (Button) customView.findViewById(R.id.btnCancel);
+
 /*
         final RecyclerView rvList = (RecyclerView) customView.findViewById(R.id.rvList);
 */
-
 
         dialogTitle.setText("Text Color");
 
 
       /*  GridLayoutManager linearLayoutManager = new GridLayoutManager(context, 7);
         rvList.setLayoutManager(linearLayoutManager);*/
-
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1252,14 +1217,7 @@ public class CreateCustomImageFragment extends Fragment {
             }
         });
 
-        btnOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mPopupWindow.dismiss();
-
-            }
-        });
-
+        btnOk.setOnClickListener(v -> mPopupWindow.dismiss());
 
         mPopupWindow.showAtLocation(ll_main_custom, Gravity.BOTTOM, 0, 0);
     }
@@ -1293,17 +1251,7 @@ public class CreateCustomImageFragment extends Fragment {
         AdapterFontList adapter = new AdapterFontList(context, getfontList(), "fontforstickertext");
         rvList.setAdapter(adapter);
 
-
-        btnOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
+        btnOk.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
-
-
     }
-
 }

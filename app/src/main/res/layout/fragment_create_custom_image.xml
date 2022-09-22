@@ -20,8 +20,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:visibility="gone"
-                android:layout_height="50dp">
+                android:layout_height="50dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/iv_backarrow"
@@ -31,10 +31,10 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="12dp"
                     android:onClick="onclickCustomFrame"
-                    android:src="@drawable/back_arrow"
                     android:padding="@dimen/_3sdp"
+                    android:src="@drawable/back_arrow"
                     android:visibility="gone"
-                    app:tint="@color/colorWhite"/>
+                    app:tint="@color/colorWhite" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -47,22 +47,22 @@
                     android:onClick="onclickCustomFrame"
                     android:orientation="horizontal"
                     android:paddingLeft="8dp"
-                    android:visibility="gone"
                     android:paddingTop="4dp"
-                    android:paddingBottom="4dp">
+                    android:paddingBottom="4dp"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="NEXT"
                         android:textColor="@color/colorWhite"
-                        android:textSize="12dp"/>
+                        android:textSize="12dp" />
 
                     <ImageView
                         android:id="@+id/iv_nextarrow"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/ic_rightarrow"/>
+                        android:src="@drawable/ic_rightarrow" />
 
                 </LinearLayout>
 
@@ -74,7 +74,7 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="16dp"
                     android:textStyle="bold"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
             </RelativeLayout>
 
@@ -122,9 +122,9 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/image_selected"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/selected_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
                         android:layout_centerInParent="true"
                         android:layout_gravity="center"
                         android:background="@null"
@@ -161,8 +161,7 @@
                 <RelativeLayout
                     android:id="@+id/opacitybg"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                </RelativeLayout>
+                    android:layout_height="match_parent" />
 
                 <com.festivalbanner.digitalposterhub.StickerClasses.StickerView
                     android:id="@+id/sticker_view"
@@ -172,6 +171,7 @@
                     android:layout_gravity="center"
                     app:showBorder="true"
                     app:showIcons="true" />
+
             </RelativeLayout>
 
             <!--<RelativeLayout
@@ -605,10 +605,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:text="Text"
-                                    android:textColor="@color/colorTheame_text"
-
-
-                                    />
+                                    android:textColor="@color/colorTheame_text" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -616,6 +613,7 @@
                                     android:layout_gravity="center"
                                     android:text="Color"
                                     android:textColor="@color/colorTheame_text" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -642,8 +640,8 @@
                                         android:layout_width="@dimen/_25sdp"
                                         android:layout_height="@dimen/_25sdp"
                                         android:layout_centerInParent="true"
-
                                         android:src="@drawable/qc_text_font" />
+
                                 </RelativeLayout>
 
                                 <TextView
@@ -659,6 +657,7 @@
                                     android:layout_gravity="center"
                                     android:text="Style"
                                     android:textColor="@color/colorTheame_text" />
+
                             </LinearLayout>
 
                             <LinearLayout
@@ -685,8 +684,8 @@
                                         android:layout_width="@dimen/_28sdp"
                                         android:layout_height="@dimen/_28sdp"
                                         android:layout_centerInParent="true"
-
                                         android:src="@drawable/qc_text_size" />
+
                                 </RelativeLayout>
 
                                 <TextView
@@ -701,10 +700,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:text="Size"
-                                    android:textColor="@color/colorTheame_text"
+                                    android:textColor="@color/colorTheame_text" />
 
-                                    />
                             </LinearLayout>
+
                             <!--     <LinearLayout
                                      android:layout_width="wrap_content"
                                      android:layout_height="wrap_content"
@@ -868,16 +867,15 @@
                                </LinearLayout>-->
 
                         </LinearLayout>
+
                     </RelativeLayout>
+
                 </HorizontalScrollView>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_framelist"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
-
-                </androidx.recyclerview.widget.RecyclerView>
-
+                    android:layout_height="100dp" />
 
                 <!--     <LinearLayout
                          android:layout_width="match_parent"
@@ -1000,8 +998,8 @@
                              </ImageView>
                          </LinearLayout>
                      </LinearLayout>-->
-            </LinearLayout>
 
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -1021,9 +1019,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50sp"
                     android:orientation="vertical"
-                    android:visibility="gone">
-
-                </LinearLayout>
+                    android:visibility="gone" />
 
                 <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/adview"
