@@ -5,11 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
@@ -27,22 +24,28 @@
         <activity
             android:name=".Me.ShowDigitalBusinessCard"
             android:exported="false" />
+
         <activity
             android:name=".Me.DigitalBusinessCardActivity"
             android:exported="false" />
+
         <activity
             android:name=".Me.LoGoEditActivity"
             android:exported="false" />
+
         <activity
             android:name=".Activities.AllCollageView"
             android:exported="false" />
+
         <activity
             android:name=".Me.LoGoMakerActivity"
             android:exported="false" />
+
         <activity
             android:name=".Activities.MainLoginPage"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+
         <activity android:name=".Activities.BusinessSelection" />
         <activity android:name=".Activities.AfterBusinessSelection" />
         <activity android:name=".Activities.AddBusinessActivity" />
@@ -56,28 +59,36 @@
         <activity android:name=".Activities.ActivityVideoPreview" />
         <activity android:name=".Activities.ActivitySingleVideoList" />
         <activity android:name=".Activities.ActivitySignUp" />
+
         <activity
             android:name=".Activities.ActivitySignIn"
             android:exported="true" />
+
         <activity android:name=".Activities.ActivityMyPostSingleView" />
+
         <activity android:name=".Activities.ActivityViewAllList" />
+
         <activity android:name=".Activities.ActivityPreview" />
+
         <activity android:name=".Activities.ActivitySingleCategoyList" />
+
         <activity
             android:name=".Activities.ActivityCreatePost"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".Activities.ActivityCreateCustomImage"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".Activities.ActivityHome"
             android:windowSoftInputMode="adjustPan" />
+
         <activity
             android:name=".Activities.ActivitySplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -89,6 +100,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:screenOrientation="portrait"
@@ -97,6 +109,7 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
@@ -116,6 +129,7 @@
                 android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
+
     </application>
 
 </manifest>

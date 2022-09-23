@@ -154,7 +154,6 @@ public class CreateCustomImageFragment extends Fragment {
             sticker_view.hideIcons(true);
             bitmapsave = viewToBitmap(ll_content);
             Constance.createdBitmap = bitmapsave;
-
             Intent save = new Intent(context, ActivityPreview.class);
             save.putExtra("name", "image");
             startActivity(save);
@@ -305,6 +304,7 @@ public class CreateCustomImageFragment extends Fragment {
                 return false;
             }
         });
+
         sticker_view.setOnStickerOperationListener(new StickerView.OnStickerOperationListener() {
             @Override
             public void onStickerAdded(@NonNull Sticker sticker) {
@@ -532,18 +532,14 @@ public class CreateCustomImageFragment extends Fragment {
                 progress = ((int) Math.round(progress / 5)) * 5;
                 et_usertext.setAlpha((Float.valueOf(progress) / Float.valueOf(100)));
                 tvOpacity.setText(progress + "%");
-
-
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
 

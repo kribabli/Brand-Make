@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import com.facebook.ads.AdSettings;
 import com.festivalbanner.digitalposterhub.Activities.ActivityHome;
 import com.festivalbanner.digitalposterhub.Activities.AllCollageView;
+import com.festivalbanner.digitalposterhub.Activities.ImageToVideoActivity;
 import com.festivalbanner.digitalposterhub.Me.DigitalBusinessCardActivity;
 import com.festivalbanner.digitalposterhub.Me.LoGoMakerActivity;
 import com.festivalbanner.digitalposterhub.R;
@@ -70,6 +71,14 @@ public class AllCustomFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), LoGoMakerActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
+
+        image_to_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ImageToVideoActivity.class);
                 getContext().startActivity(intent);
             }
         });

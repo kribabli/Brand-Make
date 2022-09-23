@@ -29,10 +29,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     splits {
         abi {
             enable true
@@ -91,6 +93,7 @@ dependencies {
     implementation project(path: ':popuphelper')
     implementation 'com.github.AppSync-ai:AppSync:61'
     implementation 'com.jcmore2.collage:collage:1.0.0'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
