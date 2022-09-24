@@ -145,10 +145,13 @@ public class AllLogoFragment extends Fragment {
                     .load(allLogoPOJO.getImage())
                     .into(holder.imageView);
 
+
             holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    //you want to call the previous like addLogo then call below 1st line.
                     Intent intent = new Intent(context, LoGoEditActivity.class);
+//                    Intent intent = new Intent(context, LOGOActivity.class);
                     intent.putExtra("image", allLogoPOJO.getImage());
                     intent.putExtra("title", "TEXTILE");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

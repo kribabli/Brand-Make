@@ -46,10 +46,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.festivalbanner.digitalposterhub.Adapters.AdapterBackgroundImage;
 import com.festivalbanner.digitalposterhub.Adapters.AdapterFontList;
 import com.festivalbanner.digitalposterhub.Adapters.AdapterTextColourPicker;
+import com.festivalbanner.digitalposterhub.Me.LOGOActivity;
 import com.festivalbanner.digitalposterhub.Model.ModelBackgroundImage;
 import com.festivalbanner.digitalposterhub.Model.ModelColorList;
 import com.festivalbanner.digitalposterhub.Model.ModelFontDetail;
@@ -92,7 +92,7 @@ public class CreateCustomImageFragment extends Fragment {
     LinearLayout ll_content, ll_main_custom;
     int seekvalue;
     Float dx, dy;
-    RelativeLayout opacitybg, rlBackgroundColor, rlOverlay, rl_addlogo,
+    RelativeLayout opacitybg, rlBackgroundColor, rlOverlay, rl_addlogo, addlogo,
             rl_AddText, rl_fontcolor, rl_Fontstyle, rlTextSize, rlBackgroundImageLocal,
             rl_addimage, rl_Fonthint;
     SharedPrefrenceConfig sharedPrefrenceConfig;
@@ -126,11 +126,11 @@ public class CreateCustomImageFragment extends Fragment {
         //get image uri from previous activity----------------
         image = getArguments().getString("image");
         title = getArguments().getString("title");
-        if (image != null) {
-            Glide.with(context)
-                    .load(image)
-                    .into(selected_image);
-        }
+//        if (image != null) {
+//            Glide.with(context)
+//                    .load(image)
+//                    .into(selected_image);
+//        }
 
         sharedPrefrenceConfig = new SharedPrefrenceConfig(context);
         calculationForHeight();
@@ -164,6 +164,14 @@ public class CreateCustomImageFragment extends Fragment {
                 } else {
                     interstitialFacbookAd();
                 }
+            }
+        });
+
+        addlogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), LOGOActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -366,6 +374,7 @@ public class CreateCustomImageFragment extends Fragment {
     }
 
     public void bindView() {
+        addlogo = view.findViewById(R.id.addlogo);
         mAdView = view.findViewById(R.id.adview);
         selected_image = view.findViewById(R.id.selected_image);
         facbook_ad_banner = view.findViewById(R.id.facbook_ad_banner);
@@ -1051,7 +1060,6 @@ public class CreateCustomImageFragment extends Fragment {
 
             }
         } else {
-
         }
     }
 
