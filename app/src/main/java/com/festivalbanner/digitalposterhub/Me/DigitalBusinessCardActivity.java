@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DigitalBusinessCardActivity extends AppCompatActivity {
-    String url = "https://adminapp.tech/yoyoiq/api/banner";
+    String url = "https://adminapp.tech/brandmaker/userapi/templatelist.php";
     ArrayList<AllLogoPOJO> listItems = new ArrayList<>();
     RecyclerView recyclerView;
     AllLogoAdapter allLogoAdapter;
@@ -75,12 +75,14 @@ public class DigitalBusinessCardActivity extends AppCompatActivity {
                 JSONArray jsonArray1 = new JSONArray();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    jsonArray1 = jsonObject.getJSONArray("response");
+                    jsonArray1 = jsonObject.getJSONArray("message");
                     for (int i = 0; i < jsonArray1.length(); i++) {
                         JSONObject jsonObject1 = jsonArray1.getJSONObject(i);
                         String id = jsonObject1.getString("id");
-                        String image = jsonObject1.getString("image");
-                        AllLogoPOJO allLogoPOJO = new AllLogoPOJO(id, image);
+                        String templatename = jsonObject1.getString("templatename");
+                        String templateimage = jsonObject1.getString("templateimage");
+                        String finalimage = "https://adminapp.tech/brandmaker/public/storage/" + templateimage;
+                        AllLogoPOJO allLogoPOJO = new AllLogoPOJO(id, finalimage);
                         listItems.add(allLogoPOJO);
                     }
                     allLogoAdapter = new AllLogoAdapter(DigitalBusinessCardActivity.this, listItems);
@@ -119,7 +121,7 @@ public class DigitalBusinessCardActivity extends AppCompatActivity {
         @NonNull
         @Override
         public AllLogoAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.all_image_logo, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.all_bussiness_template, parent, false);
             return new AllLogoAdapter.MyViewHolder(view);
         }
 
@@ -127,7 +129,6 @@ public class DigitalBusinessCardActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull AllLogoAdapter.MyViewHolder holder, int position) {
             AllLogoPOJO allLogoPOJO = list.get(position);
 
-            holder.title.setText("TEXTILE");
             Glide.with(context)
                     .load(allLogoPOJO.getImage())
                     .into(holder.imageView);
@@ -151,14 +152,12 @@ public class DigitalBusinessCardActivity extends AppCompatActivity {
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
             ImageView imageView;
-            TextView title;
             RelativeLayout relativeLayout;
 
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
                 imageView = itemView.findViewById(R.id.imageView);
                 relativeLayout = itemView.findViewById(R.id.layout);
-                title = itemView.findViewById(R.id.title);
             }
         }
     }

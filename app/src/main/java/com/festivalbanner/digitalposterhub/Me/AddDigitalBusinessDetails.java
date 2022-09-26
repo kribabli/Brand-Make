@@ -2,29 +2,26 @@ package com.festivalbanner.digitalposterhub.Me;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.festivalbanner.digitalposterhub.R;
 
-public class ShowDigitalBusinessCard extends AppCompatActivity {
-    TextView backPress;
-    LinearLayout linearLayout2;
+public class AddDigitalBusinessDetails extends AppCompatActivity {
+    TextView backPress, save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_digital_business_card);
+        setContentView(R.layout.activity_add_digital_business_details);
         initMethod();
         setAction();
     }
 
     private void initMethod() {
-        backPress = findViewById(R.id.backPress);
-        linearLayout2 = findViewById(R.id.linearLayout2);
+        backPress = findViewById(R.id.back_Button);
+        save = findViewById(R.id.save_button);
     }
 
     private void setAction() {
@@ -35,12 +32,15 @@ public class ShowDigitalBusinessCard extends AppCompatActivity {
             }
         });
 
-        linearLayout2.setOnClickListener(new View.OnClickListener() {
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ShowDigitalBusinessCard.this, AddDigitalBusinessDetails.class);
-                startActivity(intent);
+                validation();
             }
         });
+    }
+
+    private void validation() {
+
     }
 }
