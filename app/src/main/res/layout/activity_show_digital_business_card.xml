@@ -79,6 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
                 android:gravity="center"
                 android:src="@drawable/ic_whatsapp_logo" />
 
@@ -92,6 +94,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
                 android:gravity="center"
                 android:src="@drawable/ic_share_logo"
                 android:textStyle="bold" />
