@@ -1,7 +1,7 @@
 package com.festivalbanner.digitalposterhub.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,7 +27,6 @@ import com.makeramen.roundedimageview.RoundedImageView;
 import java.util.ArrayList;
 
 public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.ViewHolder> {
-
     Context context;
     // ArrayList<ModelHomeChild> modelHomeChildList;
     ArrayList<VideoHomeData> videoCategoriesDataArrayList;
@@ -48,19 +47,15 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
 
         if (comefrom.equals("home")) {
             view = inflater.inflate(R.layout.item_rv_child_category, parent, false);
-
-
         } else {
             view = inflater.inflate(R.layout.item_rv_video, parent, false);
-
         }
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         final String childitemtittle = videoCategoriesDataArrayList.get(position).getName();
         holder.tv_childitem_tittle.setText(childitemtittle);
         Log.d("dhshdd", "dshsa" + childitemtittle);
@@ -74,12 +69,22 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
             holder.tv_date.setVisibility(View.GONE);
         }
         SharedPrefrenceConfig pref = new SharedPrefrenceConfig(context);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String plantype = pref.getUser().getPlan_type();
-                if (!plantype.equals("Expired")) {
-                    if (comefrom.equals("businessviewall")) {
+        holder.itemView.setOnClickListener(view -> {
+            String plantype = pref.getUser().getPlan_type();
+            if (!plantype.equals("Expired")) {
+                if (comefrom.equals("businessviewall")) {
+                    Constance.ComeFrom = comefrom;
+                    Intent i = new Intent(context, ActivitySingleVideoList.class);
+                    // Constance.childDataList = modelHomeChildList;
+                    i.putExtra("childitemtittle", childitemtittle);
+                    i.putExtra("catnameid", catnameid);
+                    context.startActivity(i);
+                } else {
+
+                    if (videoCategoriesDataArrayList.get(position).getDetail_display().equals("Yes")) {
+                        if (comefrom.equals("home")) {
+                            comefrom = "festivalviewall";
+                        }
                         Constance.ComeFrom = comefrom;
                         Intent i = new Intent(context, ActivitySingleVideoList.class);
                         // Constance.childDataList = modelHomeChildList;
@@ -87,61 +92,33 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
                         i.putExtra("catnameid", catnameid);
                         context.startActivity(i);
                     } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setMessage(videoCategoriesDataArrayList.get(position).getDetail_message())
+                                .setPositiveButton("ok", (dialog, id) -> dialog.cancel());
 
-                        if (videoCategoriesDataArrayList.get(position).getDetail_display().equals("Yes")) {
-                            if (comefrom.equals("home")) {
-                                comefrom = "festivalviewall";
-                            }
-                            Constance.ComeFrom = comefrom;
-                            Intent i = new Intent(context, ActivitySingleVideoList.class);
-                            // Constance.childDataList = modelHomeChildList;
-                            i.putExtra("childitemtittle", childitemtittle);
-                            i.putExtra("catnameid", catnameid);
-                            context.startActivity(i);
-                        } else {
-                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                            builder.setMessage(videoCategoriesDataArrayList.get(position).getDetail_message())
-                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            dialog.cancel();
-
-                                        }
-                                    });
-
-                            //Creating dialog box
-                            builder.create();
-                            AlertDialog dialog = builder.create();
-                            dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                                @Override
-                                public void onShow(DialogInterface arg0) {
-                                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(context.getResources().getColor(R.color.colorTheame_text));
-                                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(context.getResources().getColor(R.color.colorTheame_text));
-                                }
-                            });
-                            dialog.show();
-                        }
-
+                        //Creating dialog box
+                        builder.create();
+                        AlertDialog dialog = builder.create();
+                        dialog.setOnShowListener(arg0 -> {
+                            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(context.getResources().getColor(R.color.colorTheame_text));
+                            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(context.getResources().getColor(R.color.colorTheame_text));
+                        });
+                        dialog.show();
                     }
-                } else {
-                    new AlertDialog.Builder(context)
-                            .setCancelable(false)
-                            .setMessage("Your plan is expire so can you buy again for next 1 years.")
-                            .setPositiveButton("Logout", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    pref.logout();
-                                    pref.clear();
-                                    ((FragmentActivity) context).finishAffinity();
-                                }
-                            }).setNegativeButton("Buy premium plan", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                }
+            } else {
+                new AlertDialog.Builder(context)
+                        .setCancelable(false)
+                        .setMessage("Your plan is expire so can you buy again for next 1 years.")
+                        .setPositiveButton("Logout", (dialog, which) -> {
+                            pref.logout();
+                            pref.clear();
+                            ((FragmentActivity) context).finishAffinity();
+                        }).setNegativeButton("Buy premium plan", (dialog, which) -> {
                             Intent intent = new Intent(context, PremiumActivity.class);
                             context.startActivity(intent);
                             ((FragmentActivity) context).finishAffinity();
-                        }
-                    }).show();
-                }
+                        }).show();
             }
         });
     }
@@ -153,7 +130,7 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         RoundedImageView riv_childitemimage;
-        TextView tv_childitem_tittle,tv_date;
+        TextView tv_childitem_tittle, tv_date;
         LinearLayout ll_viewall_date;
 
         public ViewHolder(@NonNull View itemView) {
@@ -165,6 +142,4 @@ public class AdapterVideoList extends RecyclerView.Adapter<AdapterVideoList.View
 
         }
     }
-
-
 }

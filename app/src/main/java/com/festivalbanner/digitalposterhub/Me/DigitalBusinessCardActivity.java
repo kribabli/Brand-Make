@@ -138,7 +138,6 @@ public class DigitalBusinessCardActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(context, ShowDigitalBusinessCard.class);
                     intent.putExtra("image", allLogoPOJO.getImage());
-                    intent.putExtra("title", "TEXTILE");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
                 }
