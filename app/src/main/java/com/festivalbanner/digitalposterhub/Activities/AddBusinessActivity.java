@@ -48,8 +48,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddBusinessActivity extends AppCompatActivity {
-
-
     Context context;
     View view;
     Tracker mTracker;
@@ -60,13 +58,11 @@ public class AddBusinessActivity extends AppCompatActivity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE};
     SharedPrefrenceConfig sharedprefconfig;
-
     MultipartBody.Part multipart_image, multipart_updateimage;
     String imagepath;
     String companyid;
     private static final int PERMISSION_CALLBACK_CONSTANT = 200;
     public static FragmentAddBusiness instance = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,33 +74,21 @@ public class AddBusinessActivity extends AppCompatActivity {
         sharedprefconfig = new SharedPrefrenceConfig(context);
         Constance.checkFragment = "Add_Business";
         hideKeyboard(AddBusinessActivity.this);
-        ll_logo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ActivityCompat.checkSelfPermission(context, permissionsRequired[0]) != PackageManager.PERMISSION_GRANTED
-                        || ActivityCompat.checkSelfPermission(context, permissionsRequired[1]) != PackageManager.PERMISSION_GRANTED
-                        || ActivityCompat.checkSelfPermission(context, permissionsRequired[2]) != PackageManager.PERMISSION_GRANTED) {
-                    checkPermission();
-                } else {
-                    pickFromGallery();
-                }
+        ll_logo.setOnClickListener(view -> {
+            if (ActivityCompat.checkSelfPermission(context, permissionsRequired[0]) != PackageManager.PERMISSION_GRANTED
+                    || ActivityCompat.checkSelfPermission(context, permissionsRequired[1]) != PackageManager.PERMISSION_GRANTED
+                    || ActivityCompat.checkSelfPermission(context, permissionsRequired[2]) != PackageManager.PERMISSION_GRANTED) {
+                checkPermission();
+            } else {
+                pickFromGallery();
             }
         });
-        ll_finish_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addBusiness();
-            }
-        });
-        ll_update_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                UpdateBusiness();
-            }
-        });
+
+        ll_finish_btn.setOnClickListener(view -> addBusiness());
+
+        ll_update_btn.setOnClickListener(view -> UpdateBusiness());
         // getbusinessdetail();
     }
-
 
     public void bindView() {
         ll_logo = findViewById(R.id.ll_logo);
@@ -116,7 +100,6 @@ public class AddBusinessActivity extends AppCompatActivity {
         et_businessmobile = findViewById(R.id.et_businessmobile);
         et_businessname = findViewById(R.id.et_businessname);
         ll_update_btn = findViewById(R.id.ll_update_btn);
-
     }
 
     public void UpdateBusiness() {
@@ -126,21 +109,16 @@ public class AddBusinessActivity extends AppCompatActivity {
             File file = new File(imagepath);
             RequestBody requestFile =
                     RequestBody.create(MediaType.parse("multipart/form-data"), file);
-
             multipart_updateimage =
                     MultipartBody.Part.createFormData("logo", file.getName(), requestFile);
-
         } else {
             RequestBody requestFile =
                     RequestBody.create(MediaType.parse("multipart/form-data"), "");
-
             multipart_updateimage =
                     MultipartBody.Part.createFormData("logo", "", requestFile);
-
         }
 
         RequestBody rbToken = RequestBody.create(MediaType.parse("text/plain"), sharedprefconfig.getapitoken().getApi_token());
-
         RequestBody rbname = RequestBody.create(MediaType.parse("text/plain"), et_businessname.getText().toString());
         RequestBody rbaddress = RequestBody.create(MediaType.parse("text/plain"), et_businessaddress.getText().toString());
         RequestBody rbmobile = RequestBody.create(MediaType.parse("text/plain"), et_businessmobile.getText().toString());
@@ -159,15 +137,13 @@ public class AddBusinessActivity extends AppCompatActivity {
         Call<CompanyDetails> call = api.updateBusinessDetails(rbToken, rbname, rbemail, multipart_updateimage, rbaddress, rbmobile, rbcompanyid, rbwebsite);
 
         //Call<CompanyDetails> call=api.updateBusinessDetails(sharedprefconfig.getapitoken().getApi_token(),et_businessname.getText().toString(),et_businessemail.getText().toString(),et_businessaddress.getText().toString(),et_businessmobile.getText().toString(),imagepath,companyid) ;
-        Log.d("getLogo", "UpdateBusiness imagepath: " + imagepath);
 
         // Log.d("checkimagepath","UpdateBusiness : "+imagepath);
         call.enqueue(new Callback<CompanyDetails>() {
             @Override
             public void onResponse(Call<CompanyDetails> call, Response<CompanyDetails> response) {
-                if (response !=null && response.body()!=null) {
+                if (response != null && response.body() != null) {
                     CompanyDetails companyDetails = response.body();
-                    Log.d("userresponse", "" + companyDetails);
                     if (companyDetails.getResult().equals("1")) {
                         if (companyDetails.getRecord() != null) {
                             Log.d("getLogo", "UpdateBusiness : " + companyDetails.getRecord().getLogo());
@@ -177,31 +153,21 @@ public class AddBusinessActivity extends AppCompatActivity {
                             Toast.makeText(context, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
                             progressDialog.dismiss();
                             getbusinessdetail();
-
                         } else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(context);
                             builder.setMessage(response.body().getMessage())
-                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            dialog.cancel();
-                                        }
-                                    });
+                                    .setPositiveButton("ok", (dialog, id) -> dialog.cancel());
                             builder.create();
                             AlertDialog dialog = builder.create();
-                            dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                                @Override
-                                public void onShow(DialogInterface arg0) {
-                                    dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.colorTheame_text));
-                                    dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.colorTheame_text));
-                                }
+                            dialog.setOnShowListener(arg0 -> {
+                                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.colorTheame_text));
+                                dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.colorTheame_text));
                             });
                             dialog.show();
                         }
-
                     } else {
                         Toast.makeText(context, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
-
                 }
                 progressDialog.dismiss();
             }
@@ -211,11 +177,7 @@ public class AddBusinessActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setMessage("Check Your Internet Connection" + t)
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                        .setPositiveButton("ok", (dialog, id) -> dialog.cancel());
                 builder.create();
                 AlertDialog dialog = builder.create();
                 dialog.setOnShowListener(new DialogInterface.OnShowListener() {
@@ -237,7 +199,7 @@ public class AddBusinessActivity extends AppCompatActivity {
         call.enqueue(new Callback<ResponseLogin>() {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                if (response !=null && response.body()!=null) {
+                if (response != null && response.body() != null) {
                     ResponseLogin getprofile = response.body();
                     if (getprofile.getResult() != null && getprofile.getResult().equals("1")) {
                         if (getprofile.getRecord() != null) {
@@ -314,7 +276,6 @@ public class AddBusinessActivity extends AppCompatActivity {
                             });
                             dialog.show();
                         }
-
                     } else {
                         Intent i = new Intent(context, ActivitySignIn.class);
                         startActivity(i);
@@ -322,7 +283,6 @@ public class AddBusinessActivity extends AppCompatActivity {
 
                     }
                 }
-
             }
 
             @Override
@@ -335,21 +295,19 @@ public class AddBusinessActivity extends AppCompatActivity {
     public void PickImageFromMobileGallery() {
         CropImage.activity()
                 .setGuidelines(CropImageView.Guidelines.ON)
-
                 .start(AddBusinessActivity.this);
-
     }
+
     private void pickFromGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK)
                 .setType("image/*");
-
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             String[] mimeTypes = {"image/jpeg", "image/png"};
             intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
         }
         startActivityForResult(intent, 10);
     }
+
     public void addBusiness() {
         MultipartBody.Part multipart_addimage;
         if (imagepath != null && !imagepath.equals("")) {
@@ -358,17 +316,14 @@ public class AddBusinessActivity extends AppCompatActivity {
                     RequestBody.create(MediaType.parse("multipart/form-data"), file);
             multipart_addimage =
                     MultipartBody.Part.createFormData("logo", file.getName(), requestFile);
-
         } else {
             RequestBody requestFile =
                     RequestBody.create(MediaType.parse("multipart/form-data"), "");
             multipart_addimage =
                     MultipartBody.Part.createFormData("logo", "", requestFile);
-
         }
 
         RequestBody rbToken = RequestBody.create(MediaType.parse("text/plain"), sharedprefconfig.getapitoken().getApi_token());
-
         RequestBody rbname = RequestBody.create(MediaType.parse("text/plain"), et_businessname.getText().toString());
         RequestBody rbaddress = RequestBody.create(MediaType.parse("text/plain"), et_businessaddress.getText().toString());
         RequestBody rbmobile = RequestBody.create(MediaType.parse("text/plain"), et_businessmobile.getText().toString());
@@ -389,22 +344,15 @@ public class AddBusinessActivity extends AppCompatActivity {
         call.enqueue(new Callback<CompanyDetails>() {
             @Override
             public void onResponse(Call<CompanyDetails> call, Response<CompanyDetails> response) {
-                if (response !=null && response.body()!=null) {
+                if (response != null && response.body() != null) {
                     CompanyDetails companyDetails = response.body();
                     if (companyDetails.getResult().equals("1")) {
                         if (companyDetails.getRecord() != null) {
-
                             Toast.makeText(context, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
-
-
                             progressDialog.dismiss();
                             ll_update_btn.setVisibility(View.VISIBLE);
                             ll_finish_btn.setVisibility(View.GONE);
                             getbusinessdetail();
-
-
-
-
                         } else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(context);
                             builder.setMessage(response.body().getMessage())
@@ -424,11 +372,9 @@ public class AddBusinessActivity extends AppCompatActivity {
                             });
                             dialog.show();
                         }
-
                     } else {
                         Toast.makeText(context, "" + response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
-
                 }
                 progressDialog.dismiss();
             }
@@ -460,13 +406,10 @@ public class AddBusinessActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("abc", "createquote");
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
-
-
                 try {
                     imagepath = PathUtills.getPath(context, resultUri);
                     Glide.with(context).load(imagepath).into(iv_selectedlogo);
@@ -476,13 +419,14 @@ public class AddBusinessActivity extends AppCompatActivity {
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
-        }if (requestCode == 10 && resultCode == RESULT_OK) {
+        }
+        if (requestCode == 10 && resultCode == RESULT_OK) {
 //            Toast.makeText(this, "Image saved", Toast.LENGTH_SHORT).show();
             if (data != null && data.getData() != null) {
                 try {
 //                    final Uri selectedUri =Uri.parse(PathUtills.getPath(context, data.getData()));
                     final Uri selectedUri = data.getData();
-                    imagepath= PathUtills.getPath(context,selectedUri);
+                    imagepath = PathUtills.getPath(context, selectedUri);
 //                    imagepath= PathUtills.getPath(context,selectedUri);
                     Glide.with(context).load(imagepath).into(iv_selectedlogo);
                     if (selectedUri != null) {
@@ -503,7 +447,6 @@ public class AddBusinessActivity extends AppCompatActivity {
 
 
     public void checkPermission() {
-
         if (ActivityCompat.checkSelfPermission(context, permissionsRequired[0]) != PackageManager.PERMISSION_GRANTED
                 || ActivityCompat.checkSelfPermission(context, permissionsRequired[1]) != PackageManager.PERMISSION_GRANTED
                 || ActivityCompat.checkSelfPermission(context, permissionsRequired[2]) != PackageManager.PERMISSION_GRANTED) {
@@ -548,7 +491,6 @@ public class AddBusinessActivity extends AppCompatActivity {
     public static void hideKeyboard(Activity activity) {
         InputMethodManager inputManager = (InputMethodManager) activity
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
-
         // check if no view has focus:
         View currentFocusedView = activity.getCurrentFocus();
         if (currentFocusedView != null) {
